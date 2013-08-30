@@ -13,36 +13,47 @@ public class Svv01 {
     /**
      * @param args the command line arguments
      */
-    public static void checkTriType(int a,int b,int c){
+    public static String checkTriType(int a,int b,int c){
+        String result =  "";
         if(a>0 && b>0 & c>0){
             if(((a+b)>c) || ((a+c)>b) || ((b+c)>a) ){
                 if(a == b & b == c){
-                    System.out.println("Equilateral Triangle");
+                    result = "Equilateral Triangle";
                 }
                 else if(a == b || a == c || b == c){
-                    System.out.println("Isolate Triangle");
+                    result = "Isolate Triangle";
                 }
                 else if(a != b & a != c){
-                    System.out.println("Scalene");
+                    result = "Scalene";
                 }
                 
             }
             else{
-                System.out.println("NOt Triangle");
+                result = "NOt Triangle";
             }
  
         }
         else{
-            System.out.println("Not triangle");
+            result = "Not triangle";
         }
+        return result;
+        
+        
     }
+    
+    /*public static void nextDate(int d, int m,int y){
+        if( int 1 <= d <= int 31 & int 1<= m<= int 12 & int 1812 <= y <= int 3000){
+        
+            
+        }
+    }*/
     public static void main(String[] args) {
         // TODO code application logic here
         checkTriType(2,2,2);
         checkTriType(2,2,4);
         checkTriType(1,2,-2);
         checkTriType(1,2,2);
-        
+        System.out.print(checkTriType(2,2,2) + checkTriType(2,2,4) + checkTriType(1,2,-2)+checkTriType(1,2,2));
         
     }
 }
